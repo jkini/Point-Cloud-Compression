@@ -35,7 +35,7 @@ python prepare_shapenet.py --data_root ../shapenet/
 python train.py --dataset shapenet
 ```
 
-## Test# shapenet
+## Testing
 ```
 python test.py --dataset shapenet --model_path output/../ckpt/ckpt-best.pth
 ```
