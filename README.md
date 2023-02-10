@@ -17,6 +17,7 @@ tensorboard
 ```
 
 ## Data Prep (.pkl created in /data directory)
+Download the ShapeNetCore v1 
 ```
 cd ./dataset
 git clone https://github.com/hjwdzh/Manifold
