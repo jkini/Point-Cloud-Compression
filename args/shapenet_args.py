@@ -16,20 +16,12 @@ def parse_shapenet_args():
     parser.add_argument('--lr_decay_step', default=15, type=int, help='learning rate decay step size')
     parser.add_argument('--gamma', default=0.5, type=float, help='gamma for scheduler_steplr')
     # parser.add_argument('--warmup_iters', default=1000, type=int, help='warmup iteration')
-    # # dataset 
-    # parser.add_argument('--train_data_path', default='./data/shapenet/shapenet_train_cube_size_22.pkl', type=str, help='path to train dataset')
-    # parser.add_argument('--train_cube_size', default=22, type=int, help='cube size of train dataset')
-    # parser.add_argument('--val_data_path', default='./data/shapenet/shapenet_val_cube_size_22.pkl', type=str, help='path to val dataset')
-    # parser.add_argument('--val_cube_size', default=22, type=int, help='cube size of val dataset')
-    # parser.add_argument('--test_data_path', default='./data/shapenet/shapenet_test_cube_size_22.pkl', type=str, help='path to test dataset')
-    # parser.add_argument('--test_cube_size', default=22, type=int, help='cube size of test dataset')
-    # parser.add_argument('--peak', default=None, type=float, help='peak value for PSNR calculation')
-    # dataset
-    parser.add_argument('--train_data_path', default='../D-PCC/data/shapenet/shapenet_train_cube_size_22.pkl', type=str, help='path to train dataset')
+    # dataset 
+    parser.add_argument('--train_data_path', default='./data/shapenet/shapenet_train_cube_size_22.pkl', type=str, help='path to train dataset')
     parser.add_argument('--train_cube_size', default=22, type=int, help='cube size of train dataset')
-    parser.add_argument('--val_data_path', default='../D-PCC/data/shapenet/shapenet_val_cube_size_22.pkl', type=str, help='path to val dataset')
+    parser.add_argument('--val_data_path', default='./data/shapenet/shapenet_val_cube_size_22.pkl', type=str, help='path to val dataset')
     parser.add_argument('--val_cube_size', default=22, type=int, help='cube size of val dataset')
-    parser.add_argument('--test_data_path', default='../D-PCC/data/shapenet/shapenet_test_cube_size_22.pkl', type=str, help='path to test dataset')
+    parser.add_argument('--test_data_path', default='./data/shapenet/shapenet_test_cube_size_22.pkl', type=str, help='path to test dataset')
     parser.add_argument('--test_cube_size', default=22, type=int, help='cube size of test dataset')
     parser.add_argument('--peak', default=None, type=float, help='peak value for PSNR calculation')
     # train
