@@ -17,6 +17,7 @@ tensorboard
 ```
 
 ## Data Prep (.pkl created in /data directory)
+```
 cd ./dataset
 git clone https://github.com/hjwdzh/Manifold
 cd Manifold && mkdir build
@@ -24,11 +25,17 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make 
 cd ..
-
+```
+```
 python prepare_shapenet.py --data_root ../shapenet/
+```
 
 ## Training
+```
 python train.py --dataset shapenet
+```
 
 ## Test# shapenet
+```
 python test.py --dataset shapenet --model_path output/../ckpt/ckpt-best.pth
+```
