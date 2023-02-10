@@ -11,7 +11,7 @@ from torch.utils.tensorboard import SummaryWriter
 from models.utils import  AverageMeter, str2bool
 from dataset.dataset import CompressDataset
 from args.shapenet_args import parse_shapenet_args
-from args.semantickitti_args import parse_semantickitti_args
+# from args.semantickitti_args import parse_semantickitti_args
 from torch.optim.lr_scheduler import StepLR
 from models.Chamfer3D.dist_chamfer_3D import chamfer_3DDist
 chamfer_dist = chamfer_3DDist()
