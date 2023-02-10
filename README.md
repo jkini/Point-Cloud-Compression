@@ -1,6 +1,7 @@
 # Point-Cloud-Compression
 
 ## Installations
+```
 cuda-11.0
 cmake-3.7.2-gcc-6.2.0
 pytorch==1.7.1 
@@ -13,6 +14,7 @@ scikit-learn==1.0.1
 compressai 
 argparse
 tensorboard
+```
 
 ## Data Prep (.pkl created in /data directory)
 cd ./dataset
