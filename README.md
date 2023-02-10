@@ -16,8 +16,8 @@ argparse
 tensorboard
 ```
 
-## Data Prep (.pkl created in /data directory)
-Download the ShapeNetCore v1 
+## Data Preparation
+Download the ShapeNetCore v1 dataset
 ```
 cd ./dataset
 git clone https://github.com/hjwdzh/Manifold
@@ -28,8 +28,9 @@ make
 cd ..
 ```
 ```
-python prepare_shapenet.py --data_root ../shapenet/
+python prepare_shapenet.py --data_root path_to_dataset
 ```
+.pkl files will be created in /data directory
 
 ## Training
 ```
