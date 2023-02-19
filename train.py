@@ -43,7 +43,21 @@ def train(args):
         os.makedirs(checkpoint_dir)
 
     # create the model
-    model = AutoEncoder(args)
+    #  model = AutoEncoder(args)
+
+    # stratified transformer
+    from models.stratified_transformer import Stratified
+
+        args.patch_size = args.grid_size * args.patch_size
+        args.window_size = [args.patch_size * args.window_size * (2**i) for i in range(args.num_layers)]
+        args.grid_sizes = [args.patch_size * (2**i) for i in range(args.num_layers)]
+        args.quant_sizes = [args.quant_size * (2**i) for i in range(args.num_layers)]
+
+        model = Stratified(args.downsample_scale, args.depths, args.channels, args.num_heads, args.window_size, \
+            args.up_k, args.grid_sizes, args.quant_sizes, rel_query=args.rel_query, \
+            rel_key=args.rel_key, rel_value=args.rel_value, drop_path_rate=args.drop_path_rate, concat_xyz=args.concat_xyz, num_classes=args.classes, \
+            ratio=args.ratio, k=args.k, prev_grid_size=args.grid_size, sigma=1.0, num_layers=args.num_layers, stem_transformer=args.stem_transformer)
+
     model = model.cuda()
     print('Training Arguments:', args)
     print('Model Architecture:', model)
@@ -201,7 +215,14 @@ def parse_train_args():
     # sub_point_conv mode
     parser.add_argument('--sub_point_conv_mode', default='mlp', type=str, help='sub-point conv mode, mlp or edge_conv')
     parser.add_argument('--output_path', default='./output', type=str, help='output path')
-
+    # stratified transformer
+    parser.add_argument('--grid_size', default=0.04, type=float, help='grid size')
+    parser.add_argument('--patch_size', default=1, type=int, help='patch size')
+    parser.add_argument('--window_size', default=4, type=int, help='window size')
+    parser.add_argument('--num_layers', default=4, type=int, help='number of layers')
+    parser.add_argument('--quant_size', default=0.01, type=float, help='quant size')
+    parser.add_argument('--downsample_scale', default=8, type=int, help='downsample scale')
+    
     args = parser.parse_args()
     return args
 
